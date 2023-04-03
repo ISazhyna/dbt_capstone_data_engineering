@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+    - name: austin_crime
+      database: de-training-381317
+      tables:
+        - name: raw_data
+
+models:
+    - name: stg_crime_report_cleaned
+      description: >-
+        source
+        "https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu"
+      columns:
+        - name: district_name
+          description: name of district
+        - name: district_key
+          description: identifier of district given by the Berlin senate
+          tests:
+            - unique
+            - not_null
