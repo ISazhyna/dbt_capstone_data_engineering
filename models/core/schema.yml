@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: crime_weather
+      description: Information of crimes in Austin and weather (particularly feeling temperature)
+      columns:
+        - name: day
+        - name: crime_type
+        - name: family_violence
+        - name: feels_like_max
+        - name: conditions

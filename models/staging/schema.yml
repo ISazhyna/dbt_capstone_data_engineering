@@ -1,0 +1,44 @@
+
+version: 2
+
+sources:
+    - name: austin_crime
+      database: de-training-381317
+      tables:
+        - name: raw_data
+        - name: raw_temp
+
+models:
+    - name: stg_crime_report_transformed
+      description: >-
+        Narrowed to the most significant features such as date, type of crime and zip code. Original source of data is
+        "https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu"
+      columns:
+        - name: crime_type
+          description: types of crime provided by city of Austin
+        - name: category_description
+          description: shortcut of crime type
+        - name: family_violence
+          description: is violence within family or not
+          tests:
+            - not_null
+        - name: occ_date
+          description: date of occured incident
+        - name: zip_code
+          description: zip code of place of incident
+    - name: stg_temp_transformed
+      description: >-
+            Temperature and conditions in Austin 2022. Provided by https://www.visualcrossing.com/weather/weather-data-services
+      columns:
+        - name: day
+          description: date in UTC format
+        - name: feels_like_max
+          description: how does actual max temperature feel
+        - name: feels_like_max
+          description: how does actual average temperature feel
+        - name: feels_like_avg
+          description: date in UTC format
+        - name: conditions
+          description: was it clear, rainy, snowy etc
+
+          
