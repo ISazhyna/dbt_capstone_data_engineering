@@ -1,10 +1,12 @@
 {{config(
-    materialized='table'
+    materialized='view'
 )}}
 
 select
     crime_type,
-    -- parse_date("%d-%m-%Y", occ_date_time) as date_of_incident,
+    category_description,
+    family_violence,
+    cast(parse_timestamp('%m/%d/%Y', `occ_date`) as date) AS occ_date,
     zip_code
 
-from {{source('austin_crime', 'raw_data')}}
+from {{source('austin_crime', 'raw_data')}} d

@@ -1,3 +1,4 @@
+
 version: 2
 
 sources:
@@ -5,9 +6,10 @@ sources:
       database: de-training-381317
       tables:
         - name: raw_data
+        - name: raw_temp
 
 models:
-    - name: stg_crime_report_cleaned
+    - name: stg_crime_report_transformed
       description: >-
         source
         "https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu"
