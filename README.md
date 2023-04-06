@@ -1,4 +1,7 @@
-Welcome to your new dbt project!
+Complimentary repo for capstone project https://github.com/ISazhyna/capstone_data_engineering.
+Setting up dbt for using BigQuery.
+You will need to create a dbt cloud account using [this link](https://www.getdbt.com/signup/) and connect to your warehouse following [these instructions](https://docs.getdbt.com/docs/cloud/manage-access/set-up-bigquery-oauth). More detailed instructions in [dbt_cloud_setup.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/dbt_cloud_setup.md)
+
 
 ### Using the starter project
 
